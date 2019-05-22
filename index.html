@@ -37,17 +37,27 @@
                 v-for="task in todoTasks"
               />
             </div>
-            <div class="six wide column">
-              <div id="completed" class="tasklist">
-                <div class="ui header">
-                  <i class="icon check circle green"></i>Completed Tasks ({{
-                    completedTasks.length
-                  }})
+            <div id="completed" class="tasklist">
+              <div class="ui header">
+                <i class="icon check circle green"></i>Completed Tasks ({{
+                                completedTasks.length
+                              }})
+              </div>
+              <task v-bind:task="task" v-for="task in completedTasks" />
+            </div>
+          </div>
+          <div class="six wide column">
+            <div id="editor" class="details ui raise segment purple">
+              <div class="ui header grid">
+                <div class="left nine wide column">
+                  <i class="icon edit violet"></i> Details
                 </div>
-                <task 
-                  v-bind:task="task" 
-                  v-for="task in completedTasks" 
-                />
+                <div class="right float five wide column">
+                </div>
+              </div>
+              <div class="ui segment">
+                <form class="ui form">
+                </form>
               </div>
             </div>
           </div>

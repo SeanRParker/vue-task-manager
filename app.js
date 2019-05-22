@@ -51,6 +51,7 @@ var app = new Vue({
         completed: true
       }
     ],
+    task: {},
     message: "Hello World!"
   },
   computed: {
@@ -69,13 +70,12 @@ var app = new Vue({
 
       if (task) {
         task.completed = !task.completed;
-        console.log("task toffled!");
       }
     },
     editTask: function(event, id) {
       let task = this.tasks.find(item => item.id == id);
       if (task) {
-        console.log(task);
+        this.task = task;
       }
     },
     deleteTask: function(event, id) {
