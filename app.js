@@ -8,9 +8,16 @@ var app = new Vue({
                   class="ui segment task"
                   v-bind:class="task.completed? 'done' : 'todo'"
                 >
-                  {{ task.id }} {{ task.name }}:
-                  {{ task.description }} completed?
-                  {{ task.completed }}
+                  <div class="ui grid">
+                    <div class="left floated twelve wide column">
+                      <div class="ui checkbox">
+                        <input type="checkbox" name="task" :checked="task.completed">
+                        <label>{{task.name}} - <span>{{ task.description }}</span></label>
+                      </div>
+                    </div>  
+                    <div class="right floated three wide column">
+                    </div>
+                  </div>
                 </div>
               `
     }
