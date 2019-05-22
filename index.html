@@ -32,14 +32,10 @@
                   todoTasks.length
                 }})
               </div>
-              <div
-                class="ui segment task"
-                v-bind:class="task.completed? 'done' : 'todo'"
+              <task
+                v-bind:task="task"
                 v-for="task in todoTasks"
-              >
-                {{ task.id }} {{ task.name }}: {{ task.description }} completed?
-                {{ task.completed }}
-              </div>
+              />
             </div>
             <div class="six wide column">
               <div id="completed" class="tasklist">
@@ -48,15 +44,7 @@
                     completedTasks.length
                   }})
                 </div>
-                <div
-                  class="ui segment task"
-                  v-bind:class="task.completed? 'done' : 'todo'"
-                  v-for="task in completedTasks"
-                >
-                  {{ task.id }} {{ task.name }}:
-                  {{ task.description }} completed?
-                  {{ task.completed }}
-                </div>
+              <task v-bind:task="task" v-for="task in completedTasks" />
               </div>
             </div>
           </div>
