@@ -8,6 +8,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
     />
+    <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
   </head>
   <body>
@@ -26,6 +27,11 @@
         <div class="ui grid">
           <div class="six wide column">
             <div id="todo" class="tasklist">
+              <div class="ui header">
+                <i class="icon play circle orange"></i>In Progress Tasks ({{
+                  todoTasks.length
+                }})
+              </div>
               <div v-for="task in todoTasks">
                 {{ task.id }} {{ task.name }}: {{ task.description }} completed?
                 {{ task.completed }}
@@ -33,6 +39,11 @@
             </div>
             <div class="six wide column">
               <div id="completed" class="tasklist">
+                <div class="ui header">
+                  <i class="icon check circle green"></i>Completed Tasks ({{
+                    completedTasks.length
+                  }})
+                </div>
                 <div v-for="task in completedTasks">
                   {{ task.id }} {{ task.name }}:
                   {{ task.description }} completed?
