@@ -11,7 +11,7 @@ var app = new Vue({
                   <div class="ui grid">
                     <div class="left floated twelve wide column">
                       <div class="ui checkbox">
-                        <input type="checkbox" name="task" :checked="task.completed">
+                        <input type="checkbox" name="task" v-on:click="$parent.toggleDone($event, task.id)" :checked="task.completed" >
                         <label>{{task.name}} - <span>{{ task.description }}</span></label>
                       </div>
                     </div>  
@@ -58,6 +58,14 @@ var app = new Vue({
 
     todoTasks: function() {
       return this.tasks.filter(item => item.completed == false);
+    }
+  },
+  methods: {
+    toggleDone: function(event, id) {
+      // let task = this.tasks.find(item => item.id == id);
+      // console.log("task toggled");
+      console.log(event);
+      console.log(id);
     }
   }
 });
