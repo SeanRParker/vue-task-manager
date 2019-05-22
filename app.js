@@ -12,7 +12,7 @@ var app = new Vue({
         id: 2,
         name: "Todo 2",
         description: "This is a another todo",
-        completed: false
+        completed: true
       },
       {
         id: 3,
