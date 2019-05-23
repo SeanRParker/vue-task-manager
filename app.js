@@ -52,7 +52,8 @@ var app = new Vue({
       }
     ],
     task: {},
-    message: "Hello World!"
+    message: "Hello World!",
+    action: "create"
   },
   computed: {
     completedTasks: function() {
@@ -64,6 +65,10 @@ var app = new Vue({
     }
   },
   methods: {
+    clear: function() {
+      this.task = {};
+      this.action = "create";
+    },
     toggleDone: function(event, id) {
       event.stopImmediatePropagation();
       let task = this.tasks.find(item => item.id == id);
@@ -74,6 +79,8 @@ var app = new Vue({
     },
     editTask: function(event, id) {
       let task = this.tasks.find(item => item.id == id);
+      this.action = "edit";
+
       if (task) {
         this.task = {
           id: id,
