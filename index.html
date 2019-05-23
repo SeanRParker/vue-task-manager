@@ -19,7 +19,12 @@
         </div>
         <div class="item">
           <div class="ui message green">
-            Use this tool to manage you todos, have fun!
+            Use this tool to manage you todos. Have fun!
+          </div>
+        </div>
+        <div class="item">
+          <div class="ui message blue" v-if="message">
+            <i class="icon info"></i>{{ message }}
           </div>
         </div>
       </div>
