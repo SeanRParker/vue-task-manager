@@ -8,6 +8,9 @@
 .task.done {
   background: lightgreen;
 }
+.task.done label {
+  text-decoration: line-through;
+}
 
 .description {
   color: slategrey;

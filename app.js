@@ -52,6 +52,7 @@ var app = new Vue({
       }
     ],
     task: {},
+    message: "",
     action: "create"
   },
   computed: {
@@ -87,7 +88,6 @@ var app = new Vue({
       }
     },
     createTask: function(event) {
-      event.preventDefault();
       if (!this.task.completed) {
         this.task.completed = false;
       } else {
@@ -119,7 +119,6 @@ var app = new Vue({
     updateTask: function(event, id) {
       let task = this.tasks.find(item => item.id == id);
       event.stopImmediatePropagation();
-      event.preventDefault();
 
       if (task) {
         task.name = this.task.name;
